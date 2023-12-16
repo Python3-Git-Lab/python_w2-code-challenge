@@ -14,6 +14,6 @@ class Customer:
     def full_name(self):
         return f"{self.first_name} {self.last_name} {self.family_name}"
     
-customer1 = Customer("John", "Doe", "Smith")
-print (customer1.__dict__)
-print(f' Full name: {customer1.full_name()}')
+# customer1 = Customer("John", "Doe", "Smith")
+# print (customer1.__dict__)
+# print(f' Full name: {customer1.full_name()}')
