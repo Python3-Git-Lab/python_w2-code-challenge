@@ -1,20 +1,26 @@
-#!/usr/bin/env python
-from customer import Customer
+class Review:
+    reviews = []
 
-class Review(Customer):
-    
-    def __init__(self, customer, restaurant, rating = 0):
-        # super().__init__(given_name, family_name)
+    def __init__(self, customer, restaurant, rating):
         self.customer = customer
-        self.restaurant= restaurant
-        self.rating= rating
+        self.restaurant = restaurant
+        self.rating = rating
+        Review.reviews.append(self)
 
     def rating(self):
-        return f'Ratings for {self.restaurant} is {self.rating} from {self.customer.full_name()}'
+        return self.rating
 
-    def all(self):
-        return self.__dict__
+    @classmethod
+    def all(cls):
+        return cls.reviews
 
-customer1 = Customer("John", "Smith")
-review = Review(customer1, "White house" , )
-print(review.rating())
+    def customer(self):
+        return self.customer
+
+    def restaurant(self):
+        return self.restaurant
+
+# # customer1 = Customer("John", "Smith")
+# # review = Review(customer1, "White house" , )
+# # print(review.rating())
+
