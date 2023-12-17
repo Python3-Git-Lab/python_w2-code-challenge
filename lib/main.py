@@ -36,5 +36,5 @@ for review in reviews:
     print(f"Customer: {review.customer.given_name} {review.customer.family_name}")
     print(f"Restaurant: {review.restaurant.name}")
     print(f"Rating: {review.get_rating()}")
-    print("------")
+    print("\n")
 
