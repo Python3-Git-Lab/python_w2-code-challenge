@@ -6,24 +6,34 @@ class Restaurant:
         self.reviews = []
         Restaurant.restaurants.append(self)
 
-    def name(self):
+    def get_name(self):
         return self.name
 
+    def add_review(self, review):
+        self.reviews.append(review)
+
+    def get_reviews(self):
+        return self.reviews
+
+    def get_customers(self):
+        unique_customers = set(review.get_customer() for review in self.reviews)
+        return list(unique_customers)
+
     @classmethod
-    def all(cls):
+    def get_all_restaurants(cls):
         return cls.restaurants
-
-    def average_star_rating(self):
-        if not self.reviews:
-            return 0
+    
+    def get_average_star_rating(self):
         total_ratings = sum(review.rating for review in self.reviews)
-        return total_ratings / len(self.reviews)
+        num_reviews = len(self.reviews)
 
-    def customers(self):
-        return list(set(review.customer for review in self.reviews))
+        if num_reviews == 0:
+            return 0
+        else:
+            return total_ratings/num_reviews
 
 # restaurant1 = Restaurant("White House")
-# print(restaurant1.get_name()) # Output: White House
+# print(restaurant1.name())
 
 # restaurant1.set_name("Green House")
-# print(restaurant1.get_name()) # Output: Green House
+# print(restaurant1.name())
