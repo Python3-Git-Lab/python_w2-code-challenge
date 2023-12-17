@@ -4,14 +4,14 @@ from customer import Customer
 from restaurant import Restaurant
 from review import Review
 
-class Customer:
-    def __init__(self, given_name, family_name):
-        self.given_name = given_name
-        self.family_name = family_name
+# class Customer:
+#     def __init__(self, given_name, family_name):
+#         self.given_name = given_name
+#         self.family_name = family_name
 
-class Restaurant:
-    def __init__(self, name):
-        self.name = name
+# class Restaurant:
+#     def __init__(self, name):
+#         self.name = name
 
 # Creating instances of Customer 1 and Restaurant 1
 customer1 = Customer("John", "Doe")
